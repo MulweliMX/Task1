@@ -1,0 +1,38 @@
+﻿@page
+@model Task1.Pages.Allocate_GoodsModel
+@{
+    ViewData["Title"] = "Allocate Goods";
+}
+<div class="Disaster">
+
+
+    <h1>Allocate Goods to Selected Disaster.</h1>
+
+    @if (Model.hasData)
+    {
+        <h6 class="alert-success">Goods Allocated To Disater.</h6>
+
+    }
+    <div class="container">
+        <form method="post">
+
+            <label for="dateAll">Date OF allocation</label>
+            <input type="datetime-local" id="dateAll" name="dateAll" required />
+
+            <label for="activeGood">Allocate Goods To Active Disaster</label>
+            <select id="activeGood" name="activeGood" size="4" multiple required>
+                <option value="Water">Water</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Food">Food</option>
+                <option value="Shelters">Shelters</option>
+            </select>
+            <label for="dateAll"></label>
+            <label for="dateA"></label>
+            <input type="submit" name="btnAllocate" value="Allocate Goods">
+
+            <input type="reset" style="margin-top:15px;" name="btnAllocateReset" value="Reset">
+
+        </form>
+    </div>
+
+</div>

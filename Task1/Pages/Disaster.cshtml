@@ -1,0 +1,51 @@
+﻿@page
+@model Task1.Pages.DisasterModel
+@{
+    ViewData["Title"] = "Disaster Capture";
+}
+
+<div class="Disaster">
+
+
+    <h1>Provide the following to Log Disaster</h1>
+
+    @if (Model.hasData)
+    {
+        <h6 class="alert-success">We received your Log, Thank you for your Log.</h6>
+
+    }
+    <div class="container">
+        <form method="post">
+
+            <label for="SDate">Start Date of disaster</label>
+            <input type="datetime-local" id="SDate" name="SDate" />
+
+            <label for="EDate">End Date of disaster</label>
+            <input type="datetime-local" id="EDate" name="EDate" />
+
+            <label for="txtAddress">Area Of Disaster</label>
+            <input type="text" id="txtAddress" name="txtAddress" placeholder="kzn" required />
+
+            <label for="txtDescription">Description of disaster</label>
+            <textarea id="txtDescription" name="txtDescription" placeholder=".." style="height:200px" required></textarea>
+
+            <label for="aid">Required Type OF Aid Needed</label>
+            <select id="aid" name="aid" required>
+                <option value="Water">Water</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Food">Food</option>
+                <option value="Shelters">Shelters</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="txtNewAid">If Other selected, Enter the following</label>
+            <input type="text" id="txtNewAid" name="txtNewAid" placeholder="Water" />
+
+            <input type="submit" name="btnCapture" value="Capture Data">
+
+            <input type="reset" style="margin-top:15px;" name="btnReset" value="Reset">
+            
+        </form>
+    </div>
+
+</div>

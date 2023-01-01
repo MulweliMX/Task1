@@ -1,0 +1,42 @@
+﻿@page
+@model Task1.Pages.Capture_purchaseModel
+@{
+    ViewData["Title"] = "Purchase Capture Of Goods";
+}
+
+<div class="Disaster">
+
+    <h1>Available Balance: @Model.money()</h1>
+    <h1 style="text-align:center;">Capture purchase of goods using available money</h1>
+
+    @if (Model.hasData)
+    {
+        <h6 class="alert-success">Goods are being captured</h6>
+
+    }
+    <div class="container">
+        <form method="post">
+
+            <label for="dateAll">Date OF Capture</label>
+            <input type="datetime-local" id="dateAll" name="dateAll" required />
+
+            <label for="activeGood">Choose Goods to purchase</label>
+            <select id="activeGood" name="activeGood" size="4" multiple required>
+                <option value="Water">Water</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Food">Food</option>
+                <option value="Shelters">Shelters</option>
+            </select>
+            <label for="amountAllocate">Total Cost Of Goods</label>
+            <input type="number" id="amountAllocate" name="amountAllocate" required />
+
+            <label for="dateAll"></label>
+            <label for="dateA"></label>
+            <input type="submit" name="btnAllocate" value="Capture purchase of Goods">
+
+            <input type="reset" style="margin-top:15px;" name="btnAllocateReset" value="Reset">
+
+        </form>
+    </div>
+
+</div>

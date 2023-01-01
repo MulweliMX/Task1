@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - POE Resubmission</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+
+
+        <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none;" id="mySidebar">
+            <button class="w3-bar-item w3-button w3-large"
+                    onclick="w3_close()">
+                 Navigation Panel &times;
+            </button>
+            <a class="w3-bar-item w3-button" asp-area="" asp-page="/Index">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn w3-bar-item w3-button">
+                    User Profile
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a asp-area="" asp-page="/Register">Sign Up</a>
+                    <a asp-area="" asp-page="/Login">Sign In</a>
+                </div>
+            </div>
+            <div class="dropdown">
+
+                <button class="dropbtn w3-bar-item w3-button">
+                    Monetary Donations
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a asp-area="" asp-page="/Donate_Money">Donate</a>
+                    <a asp-area="" asp-page="/Capture_purchase">Capture Purchase Of Goods</a>
+                    <a asp-area="" asp-page="/View_Donate_Money">Display</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn w3-bar-item w3-button">
+                    Goods Donations
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a asp-area="" asp-page="/Goods">Make Donate</a>
+                    <a asp-area="" asp-page="/View_Goods">Display</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn w3-bar-item w3-button">
+                    Disaster
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a asp-area="" asp-page="/Disaster">Capture Disaster</a>
+                    <a asp-area="" asp-page="/ViewMoney">Display  Money Allocated</a>
+                    <a asp-area="" asp-page="/ViewGoods_">Display Goods Allocated</a>
+                    <a asp-area="" asp-page="/View_Disaster">Display</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="background-color: mediumpurple; color: whitesmoke;">
+            <div id="main">
+
+                <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+                <div class="w3-container" style="background-color: mediumpurple; color: whitesmoke;">
+                </div>
+            </div>
+        </div>
+
+            <!--div class="topnav" id="myTopnav">
+            <a asp-area="" asp-page="/Index">Home</a>
+            <div class="dropdown">
+
+                <button class="dropbtn">
+                    Monetary Donations
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a asp-area="" asp-page="/Donate_Money">Donate</a>
+                    <a asp-area="" asp-page="/View_Donate_Money">View Donation</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    Goods Donations
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a asp-area="" asp-page="/Goods">Donate</a>
+                    <a asp-area="" asp-page="/View_Goods">View Donation</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    Emergency
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a asp-area="" asp-page="/Disaster">Capture Disaster</a>
+                    <a asp-area="" asp-page="/View_Disaster">View Disaster</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    MyAccount
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a asp-area="" asp-page="/Register">Register</a>
+                    <a asp-area="" asp-page="/Login">Login</a>
+                </div>
+            </div>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </!-div>
+            -->
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "25%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

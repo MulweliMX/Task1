@@ -1,0 +1,34 @@
+﻿@page
+@model Task1.Pages.Allocate_MoneyModel
+@{
+    ViewData["Title"] = "Allocate Money";
+}
+
+<div class="Disaster">
+
+
+    <h1>Allocate Money to Selected Disaster.</h1>
+
+    @if (Model.hasData)
+    {
+        <h6 class="alert-success">Money Allocated To Disaster.</h6>
+
+    }
+    <div class="container">
+        <form method="post">
+
+            <label for="dateAll">Date OF allocation</label>
+            <input type="datetime-local" id="dateAll" name="dateAll" required/>
+
+            <label for="amountAllocate">Money To Allocate</label>
+            <input type="number" id="amountAllocate" name="amountAllocate" required/>
+
+
+            <input type="submit" name="btnAllocate" value="Allocate Money">
+
+            <input type="reset" style="margin-top:15px;" name="btnAllocateReset" value="Reset">
+
+        </form>
+    </div>
+
+</div>

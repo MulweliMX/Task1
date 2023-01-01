@@ -1,0 +1,32 @@
+﻿@page
+@model Task1.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="Login">
+
+
+    <h1>Sign In</h1>
+    <h6 align="center">Enter your Login Credentials</h6>
+
+    @if (Model.hasData)
+    {
+        <h4 class="alert-success" align="center">User successfully logged in</h4>
+    }
+    <div class="container">
+        <form method="post">
+
+            <label for="email">Email</label>
+            <input type="email" id="txtEmail" name="txtEmail" placeholder="Mathew@outlook.com" required />
+
+            <label for="txtPassword">Password</label>
+            <input type="password" id="txtPassword" name="txtPassword" required />
+
+            <input type="submit" name="btnCapture" value="Sign In">
+            <input type="reset" style="margin-top:15px;" name="btnReset" value="Reset">
+
+        </form>
+    </div>
+
+</div>

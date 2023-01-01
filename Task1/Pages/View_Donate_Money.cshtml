@@ -1,0 +1,36 @@
+﻿@page
+@model Task1.Pages.View_Donate_MoneyModel
+@{
+    ViewData["Title"] = "View Money Donated";
+}
+
+<h1>Money Donation</h1>
+
+<h4>@Model.hasData</h4>
+<table class="customers">
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Message</th>
+        <th>Action</th>
+    </tr>
+    <tbody>
+        @foreach (var list in Model.getClass)
+        {
+            <tr>
+                <td>@list.getRow()</td>
+                <td>@list.getDate()</td>
+                <td>@list.getAmount()</td>
+                <td>@list.getAnonymous()</td>
+                <td>@list.getComment()</td>
+                <td>
+                    <a class="button1" href="#">Delete</a>
+                    <a href="button2">Update</a>
+                    <a href="button3">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

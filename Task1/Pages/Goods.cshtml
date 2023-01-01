@@ -1,0 +1,43 @@
+﻿@page
+@model Task1.Pages.GoodsModel
+@{
+    ViewData["Title"] = "Goods Donation";
+}
+
+<div class="Goods">
+
+
+
+    <h1>Provide the following to Donate Goods</h1>
+    @if (Model.hasData)
+    {
+        <h6 class="alert-success">We received your Goods, Thank you for Goods.</h6>
+
+    }
+    <div class="container">
+        <form method="post">
+
+            <label for="fDate">Date Of Donation</label>
+            <input type="datetime-local" id="fDate" name="fDate" />
+
+            <label for="txtNoItem">Number of goods donated</label>
+            <input type="number" id="txtNoItem" name="txtNoItem" placeholder="2" min="1" required />
+
+            <label for="Cat" class="close_">Category Of Goods</label>
+            <select id="Cat" class="close_" name="Cat" required>
+                <option value="Clothes">Clothes</option>
+                <option value="Non-Perishable-Foods">Non-Perishable-Foods</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="txtNewCat">If Selected Other, Enter the following</label>
+            <input type="text" id="txtNewCat" name="txtNewCat" placeholder="clothes" />
+
+            <input type="submit" name="btnCapture" value="Donate Goods">
+
+            <input type="reset" style="margin-top:15px;" name="btnReset" value="Reset">
+
+        </form>
+    </div>
+
+</div>

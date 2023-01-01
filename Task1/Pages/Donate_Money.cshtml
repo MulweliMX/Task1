@@ -1,0 +1,40 @@
+﻿@page
+@model Task1.Pages.Donate_MoneyModel
+@{
+    ViewData["Title"] = "Monetary";
+}
+
+<div class="Donate">
+
+
+    <h1>Make Donation Here</h1>
+    <h6>provide the following for Donation</h6>
+    @if (Model.hasData)
+    {
+        <h6 class="alert-success"> Donation received, Thank you for your donation.</h6>
+    }
+    <div class="container">
+        <form method="post">
+            <label for="fDate">Donation Date</label>
+            <input type="datetime-local" id="fDate" name="fDate" required />
+
+            <label for="fAmount">Price Of Donation</label>
+            <input type="number" id="fAmount" name="fAmount" placeholder="40" required />
+
+            <label for="fAno">Kept Anonymos?</label>
+            <select id="fAno" name="fAno" required>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+            </select>
+
+            <label for="fComment">Message</label>
+            <textarea id="fComment" name="fComment" placeholder=".." style="height:200px"></textarea>
+
+            <input type="submit" name="btnDonate" value="Donate Now">
+
+            <input type="reset" style="margin-top:15px;" name="btnReset" value="Reset">
+
+        </form>
+    </div>
+
+</div>

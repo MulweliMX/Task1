@@ -1,0 +1,37 @@
+﻿@page
+@model Task1.Pages.View_DisasterModel
+@{
+}
+<h1>Disaster Log</h1>
+
+<h4>@Model.hasData</h4>
+<table class="customers">
+    <tr>
+        <th>ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Area</th>
+        <th>Description</th>
+        <th>Aid</th>
+        <th>Self Aid entered</th>
+        <th>Action</th>
+    </tr>
+    <tbody>
+        @foreach (var list in Model.getClass)
+        {
+        <tr>
+            <td>@list.getRow()</td>
+            <td>@list.getStartDate()</td>
+            <td>@list.getEndDate()</td>
+            <td>@list.getLocation()</td>
+            <td>@list.getDescription()</td>
+            <td>@list.getAid()</td>
+            <td>@list.getNewAid()</td>
+            <td>
+                <a class="button1" href="Allocate_Money?id=@list.getRow()">Allocate Money</a>
+                <a class="button1" href="Allocate_Goods?id=@list.getRow()">Allocate goods</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
