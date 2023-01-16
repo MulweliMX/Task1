@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'alleviationdonationweb'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9D746CB82355481A8AC6987E66845695 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4ACC995E4D724454AE2D8AC54AAF56A9 }}
           package: .
