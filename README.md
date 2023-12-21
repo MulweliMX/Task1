@@ -1,5 +1,5 @@
-# Task1
-Donationwebsite resubmission
+# C# project 
+Donationwebsite focus 
 git commit
 Adding a Pipeline through Azure devops
 Pipeline was successfully added with all build configurations made
